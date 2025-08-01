@@ -1,6 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
 import getBaseUrl from "../../../utils/baseURL";
 
+
 const ordersApi = createApi({
   reducerPath: "ordersApi",
   baseQuery: fetchBaseQuery({
@@ -9,7 +10,7 @@ const ordersApi = createApi({
   }),
   tagTypes: ["Orders"],
   endpoints: (builder) => ({
-    createOrder: (builder.mutation)({
+    createOrder: builder.mutation ({
       query: (newOrder) => ({
         url: "/",
         method: "POST",
